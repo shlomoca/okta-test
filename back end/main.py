@@ -106,7 +106,6 @@ def validate(token: str = Depends(oauth2_scheme)):
         )
         return bool(res)
     except Exception:
-        print("what the hell", token, config('OKTA_ISSUER'), config('OKTA_AUDIENCE'), config('OKTA_CLIENT_ID'))
         raise HTTPException(status_code=403)
 
 
